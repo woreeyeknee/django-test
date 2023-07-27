@@ -1,0 +1,16 @@
+#n = 1
+#print("请输入n的值:")
+#n = int(input())
+#for i in range(0,N):
+###	n = n+1
+	#print(N,n)
+
+
+
+rabbit = 3
+print("请输入n的值:")
+N = int(input())
+
+for i in range(0,N):
+	rabbit =  rabbit*2
+print("%d年后, 兔子的数量为%d."%(N,rabbit))
