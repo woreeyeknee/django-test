@@ -11,8 +11,16 @@
     <div class="row">
         <h1 class="col-12 mt-4 mb-4">{{ article.title }}</h1>
         <div class="col-12 alert alert-success">作者：{{ article.author }}
-      · <a href="#" onclick="confirm_delete()">删除文章</a>
-      · <a href="{% url "article:article_update" article.id %}">编辑文章</a>
+        <a href="#" onclick="confirm_delete()">删除文章</a>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action<a href="#" onclick="confirm_delete()">删除文章</a></li>
+  </ul>
+</div>
+        <a href="{% url "article:article_update" article.id %}">编辑文章</a>
             <p>{{ article.body|safe }}</p>
         </div>
     </div>

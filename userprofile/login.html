@@ -9,7 +9,8 @@
                <h5>点击<a href='{% url "userprofile:register" %}'>注册账号</a>加入我们吧！</h5>
                <br>
                <form method="post" action=".">
-               <form method="post" action=".">
+               </form>
+                   <br>
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="username">账号</label>

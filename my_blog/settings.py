@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'password_reset',
+
     'article',
     'userprofile',
 ]
@@ -125,3 +127,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "statuc"),
     )
+EMAIL_HOST = '1094752122.qq.com'
+EMAIL_HOST_USER = '1094752122@qq.com'
+EMAIL_HOST_PASSWORD = '123456'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'xuzi的博客 <1094752122@qq.com>'

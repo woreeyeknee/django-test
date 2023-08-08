@@ -6,6 +6,8 @@ from django.shortcuts import render
 from .models import ArticlePost
 import markdown
 
+from django.contrib.auth.decorators import login_required
+
 def article_list(request):
     articles = ArticlePost.objects.all()
     context = { 'articles': articles }
@@ -21,12 +23,13 @@ def article_detail(request, id):
     context = { 'article': article }
     return render(request, 'article/detail.html', context)
 
+@login_required(login_url='/userprofile/login/')
 def article_create(request):
     if request.method == "POST":
         article_post_form = ArticlePostForm(data=request.POST)
         if article_post_form.is_valid():
             new_article = article_post_form.save(commit=False)
-            new_article.author = User.objects.get(id=1)
+            new_article.author = User.objects.get(id=request.user.id)
             new_article.save()
             return redirect("article:article_list")
         else:
